@@ -1,5 +1,6 @@
 import axios from '../../src/index'
 
+// 1. handle url and params
 axios({
   method: 'get',
   url: '/base/get',
@@ -61,6 +62,7 @@ axios({
   }
 })
 
+// 2. handle data and headers
 axios({
   method: 'post',
   url: '/base/post',
@@ -97,4 +99,28 @@ axios({
   method: 'post',
   url: '/base/post',
   data: searchParams
+})
+
+// 3. handle response
+axios({
+  method: 'post',
+  url: '/base/post',
+  data: {
+    a: 1,
+    b: 2
+  }
+}).then((res) => {
+  console.log(res)
+})
+
+axios({
+  method: 'post',
+  url: '/base/post',
+  responseType: 'json',
+  data: {
+    a: 3,
+    b: 4
+  }
+}).then((res) => {
+  console.log(res)
 })
